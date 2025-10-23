@@ -15,11 +15,11 @@ export default function Login() {
     setError("");
 
     try {
-      const res = await API.post("/login", { email, password });
+      const res = await API.post("/auth/login", { email, password });
       localStorage.setItem("token", res.data.token);
       navigate("/dashboard");
     } catch (err) {
-      setError(err.response?.data?.message || "Login failed. Try again.");
+      setError(err.response?.data?.message || "Login failed. Please try again.");
     } finally {
       setLoading(false);
     }

@@ -1,7 +1,13 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Analyze() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+  const token = localStorage.getItem("token");
+  if (!token) navigate("/");
+}, []);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">

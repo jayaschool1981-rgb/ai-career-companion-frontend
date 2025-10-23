@@ -16,7 +16,9 @@ export default function Register() {
         setError("");
 
         try {
-            await API.post("/register", { name, email, password });
+            await API.post("/auth/register", { name, email, password });
+
+            
             alert("Registration successful! Please log in.");
             navigate("/");
         } catch (err) {
