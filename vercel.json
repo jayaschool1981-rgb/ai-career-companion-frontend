@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm rebuild rollup && npm run build",
+  "buildCommand": "chmod +x node_modules/.bin/vite && npm rebuild rollup && npm run build",
   "build": {
     "env": {
       "NODE_VERSION": "20"
